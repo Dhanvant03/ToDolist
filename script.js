@@ -38,16 +38,16 @@ function addData() {
 }
 
 function removeData(currentElement) {
-    
+
     let conf = confirm("Are you sure removing this data");
     if (conf) {
         currentElement.parentElement.parentElement.remove();
         console.log(addVal);
-        if (addVal.includes(currentElement.parentElement.previousElementSibling.textContent)){
+        if (addVal.includes(currentElement.parentElement.previousElementSibling.textContent)) {
             let delValIndex = addVal.indexOf(currentElement.parentElement.previousElementSibling.textContent);
-            addVal.splice(delValIndex,1)
+            addVal.splice(delValIndex, 1)
         }
-        else{
+        else {
             console.log("f");
         }
         console.log(addVal);
@@ -80,9 +80,9 @@ function updateData(currentElement) {
         let currHeading = document.createElement('h3');
         currHeading.textContent = textContent;
 
+        let updateInput = currentElement.parentElement.previousElementSibling;
         if (textContent == "") {
             // alert("Please Enter Value")
-            let updateInput = currentElement.parentElement.previousElementSibling
             updateInput.classList.add("notdata");
             setTimeout(() => {
                 updateInput.classList.remove("notdata");
