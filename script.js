@@ -88,8 +88,22 @@ function updateData(currentElement) {
                 updateInput.classList.remove("notdata");
             }, 800);
         } else {
-            currentElement.textContent = "Edit";
-            currentElement.parentElement.parentElement.replaceChild(currHeading, currentElement.parentElement.previousElementSibling)
+            console.log(addVal);
+
+            if (addVal.includes(currHeading.textContent)) {
+                alert("Data Already Add Your List")
+            }
+            else {
+                let delValIndex = addVal.indexOf(currentElement.parentElement.previousElementSibling.textContent);
+                addVal.splice(delValIndex, 1, currHeading.textContent)
+
+                currentElement.textContent = "Edit";
+                currentElement.parentElement.parentElement.replaceChild(currHeading, currentElement.parentElement.previousElementSibling)
+            }
+
+            console.log(addVal);
+
+
         }
 
     } else {
