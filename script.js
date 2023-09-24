@@ -88,8 +88,6 @@ function updateData(currentElement) {
                 updateInput.classList.remove("notdata");
             }, 800);
         } else {
-            console.log(addVal);
-
             if (addVal.includes(currHeading.textContent)) {
                 alert("Data Already Add Your List")
             }
@@ -100,10 +98,6 @@ function updateData(currentElement) {
                 currentElement.textContent = "Edit";
                 currentElement.parentElement.parentElement.replaceChild(currHeading, currentElement.parentElement.previousElementSibling)
             }
-
-            console.log(addVal);
-
-
         }
 
     } else {
